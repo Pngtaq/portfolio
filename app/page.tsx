@@ -5,11 +5,104 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Github, Linkedin, Mail, ExternalLink } from "lucide-react";
 import Image from "next/image";
+import { div } from "framer-motion/client";
 
 export default function PortfolioHome() {
   return (
     <div className="bg-gray-50 text-gray-900 scroll-smooth">
-      <Image src="/background1.png" fill alt="paper-grid" className="" />
+      <div className="relative w-screen h-screen">
+        <Image
+          src="/background1.png"
+          fill
+          alt="paper-grid"
+          className="absolute inset-0 object-cover z-0"
+        />
+
+        <div>
+          {/* Ripped paper with animation */}
+          <motion.div
+            className="relative rotate-[-1deg] max-w-150 h-[300px] w-full"
+            initial={{ opacity: 0, y: 50, rotate: -5 }}
+            animate={{ opacity: 1, y: 0, rotate: -3 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
+            {/* Background ripped paper */}
+            <Image
+              src="/ripped-paper.png"
+              fill
+              alt="ripped-paper"
+              className="absolute inset-0 object-cover"
+            />
+
+            {/* Animated text */}
+            <motion.h1
+              className="absolute left-22 top-12 z-10 text-5xl font-bold text-black"
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.3, delay: 0 }}
+            >
+              Skills
+            </motion.h1>
+
+            {/* Animated list */}
+            <motion.ul
+              className="absolute left-24 top-28 z-10 text-xl font-bold text-black space-y-2 list-disc"
+              initial="hidden"
+              animate="visible"
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  transition: {
+                    staggerChildren: 0.2,
+                  },
+                },
+              }}
+            >
+              {["NextJS", "React", "Express"].map((skill, i) => (
+                <motion.li
+                  key={i}
+                  variants={{
+                    hidden: { opacity: 0, y: 20 },
+                    visible: { opacity: 1, y: 0 },
+                  }}
+                >
+                  {skill}
+                </motion.li>
+              ))}
+            </motion.ul>
+            <motion.ul
+              className="absolute right-24 top-28 z-10 text-xl font-bold text-black space-y-2 list-disc"
+              initial="hidden"
+              animate="visible"
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  transition: {
+                    staggerChildren: 0.2,
+                  },
+                },
+              }}
+            >
+              {["NextJS", "React", "Express"].map((skill, i) => (
+                <motion.li
+                  key={i}
+                  variants={{
+                    hidden: { opacity: 0, y: 20 },
+                    visible: { opacity: 1, y: 0 },
+                  }}
+                >
+                  {skill}
+                </motion.li>
+              ))}
+            </motion.ul>
+          </motion.div>
+        </div>
+      </div>
+
       {/* HERO */}
       <section className="min-h-screen flex flex-col items-center justify-center text-center px-6">
         <motion.h1

@@ -1,4 +1,6 @@
 import { motion } from "framer-motion";
+import ReactSVG from "./ui/svg/ReactSVG";
+import NextjsSVG from "./ui/svg/NextjsSVG";
 
 export default function Skills() {
   return (
@@ -36,7 +38,7 @@ export default function Skills() {
                 visible: { opacity: 1, y: 0 },
               }}
             >
-              {skill}
+              <ReactSVG />
             </motion.li>
           ))}
         </motion.ul>
@@ -62,7 +64,7 @@ export default function Skills() {
                 visible: { opacity: 1, y: 0 },
               }}
             >
-              {skill}
+              <NextjsSVG />
             </motion.li>
           ))}
         </motion.ul>

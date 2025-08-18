@@ -11,16 +11,16 @@ export default function PortfolioHome() {
   return (
     <div className="bg-gray-50 text-gray-900 scroll-smooth">
       <div
-        className="h-screen bg-cover bg-center relative px-6"
+        className="min-h-screen bg-cover bg-center relative "
         style={{ backgroundImage: "url('/background.png')" }}
       >
-        <div className="grid grid-cols-2 pt-10 z-50">
-          <div className="justify-self-center">
+        <div className="grid grid-cols-1 pt-2 lg:grid-cols-3 ">
+          <div className="">
             <h1 className="text-3xl">
               <span className="text-6xl">Hello!</span> I&apos;m John Raison V.
               Salvador
             </h1>
-            <p className="z-1">
+            <p>
               I am a 25-year-old full-stack programmer from Rizal, Philippines,
               with a strong passion for creating innovative and efficient
               digital solutions. My expertise lies in building modern web
@@ -33,12 +33,18 @@ export default function PortfolioHome() {
           </div>
 
           <div className="justify-self-center rotate-[3deg]">
-            <Image src="/me.png" width={300} height={30} alt="me" />
+            <Image src="/me.png" width={250} height={10} alt="me" />
+          </div>
+          <div className="text-start">
+            <h1 className="text-5xl">CONTACT</h1>
+            <p>ronchan.dev@gmail.com</p>
+            <p>(+63)9629707551</p>
+            <p>https://www.linkedin.com/in/john-raison-salvador-9a8b62271/</p>
           </div>
         </div>
-        <div className="w-full flex justify-evenly">
+        <div className="w-full flex justify-evenly flex-wrap">
           <div
-            className="h-130 w-120 bg-cover bg-center  flex items-center justify-center text-center top-80"
+            className="h-110 w-120 bg-cover bg-center  flex items-center justify-center text-center"
             style={{ backgroundImage: "url('/paper2.png')" }}
           >
             <div className="w-[70%]">
@@ -47,11 +53,15 @@ export default function PortfolioHome() {
             </div>
           </div>
           <div
-            className="h-100 w-160 bg-cover bg-center  flex items-center justify-center text-center top-80"
+            className="h-100 w-160 bg-cover bg-center  flex items-center justify-center text-center rotate-[-3deg]"
             style={{ backgroundImage: "url('/ripped-paper.png')" }}
           >
             <Skills />
           </div>
+        </div>
+
+        <div>
+          <h1 className="text-center text-5xl">TABLE OF CONTENTS</h1>
         </div>
       </div>
       {/* HERO */}

@@ -38,7 +38,7 @@ export default function Skills() {
                 visible: { opacity: 1, y: 0 },
               }}
             >
-              <ReactSVG />
+              {skill}
             </motion.li>
           ))}
         </motion.ul>
@@ -64,7 +64,7 @@ export default function Skills() {
                 visible: { opacity: 1, y: 0 },
               }}
             >
-              <NextjsSVG />
+              {skill}
             </motion.li>
           ))}
         </motion.ul>

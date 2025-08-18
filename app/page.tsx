@@ -11,23 +11,30 @@ export default function PortfolioHome() {
   return (
     <div className="bg-gray-50 text-gray-900 scroll-smooth">
       <div
-        className="w-screen h-screen bg-cover bg-center px-40"
+        className="h-screen bg-cover bg-center px-6"
         style={{ backgroundImage: "url('/background1.png')" }}
       >
-        <div className="">
-          <h1 className="text-3xl">Hello, I&apos;m John Raison V. Salvador</h1>
-          <p>
-            I am a 25-year-old full-stack programmer from Rizal, Philippines,
-            with a strong passion for creating innovative and efficient digital
-            solutions. My expertise lies in building modern web applications
-            using technologies such as Next.js, Express, and React, allowing me
-            to handle both front-end and back-end development with ease. I
-            thrive on solving complex problems through code, continuously
-            learning, and pushing myself to improve my skills. Programming isn’t
-            just a career for me—it’s something I genuinely enjoy and dedicate
-            myself to, as it allows me to turn ideas into impactful, real-world
-            applications.
-          </p>
+        <div className="grid grid-cols-2 pt-10">
+          <div className="justify-self-center">
+            <h1 className="text-3xl">
+              <span className="text-6xl">Hello!</span> I&apos;m John Raison V.
+              Salvador
+            </h1>
+            <p>
+              I am a 25-year-old full-stack programmer from Rizal, Philippines,
+              with a strong passion for creating innovative and efficient
+              digital solutions. My expertise lies in building modern web
+              applications using technologies such as Next.js, Express, and
+              React, allowing me to handle both front-end and back-end
+              development with ease. I thrive on solving complex problems
+              through code, continuously learning, and pushing myself to improve
+              my skills.
+            </p>
+          </div>
+
+          <div className="justify-self-center rotate-[3deg]">
+            <Image src="/me.png" width={300} height={30} alt="me" />
+          </div>
         </div>
 
         <div className="flex items-center justify-center h-full">

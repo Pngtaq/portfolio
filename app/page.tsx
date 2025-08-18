@@ -4,10 +4,12 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Github, Linkedin, Mail, ExternalLink } from "lucide-react";
+import Image from "next/image";
 
 export default function PortfolioHome() {
   return (
     <div className="bg-gray-50 text-gray-900 scroll-smooth">
+      <Image src="/background1.png" fill alt="paper-grid" className="" />
       {/* HERO */}
       <section className="min-h-screen flex flex-col items-center justify-center text-center px-6">
         <motion.h1

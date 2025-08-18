@@ -11,16 +11,16 @@ export default function PortfolioHome() {
   return (
     <div className="bg-gray-50 text-gray-900 scroll-smooth">
       <div
-        className="h-screen bg-cover bg-center px-6"
-        style={{ backgroundImage: "url('/background1.png')" }}
+        className="h-screen bg-cover bg-center relative px-6"
+        style={{ backgroundImage: "url('/background.png')" }}
       >
-        <div className="grid grid-cols-2 pt-10">
+        <div className="grid grid-cols-2 pt-10 z-50">
           <div className="justify-self-center">
             <h1 className="text-3xl">
               <span className="text-6xl">Hello!</span> I&apos;m John Raison V.
               Salvador
             </h1>
-            <p>
+            <p className="z-1">
               I am a 25-year-old full-stack programmer from Rizal, Philippines,
               with a strong passion for creating innovative and efficient
               digital solutions. My expertise lies in building modern web
@@ -36,25 +36,22 @@ export default function PortfolioHome() {
             <Image src="/me.png" width={300} height={30} alt="me" />
           </div>
         </div>
-
-        <div className="flex items-center justify-center h-full">
-          {/* Ripped paper with animation */}
-          <motion.div
-            className="relative rotate-[-1deg] w-[90%] max-w-4xl h-[300px] flex flex-col items-center justify-center"
-            initial={{ opacity: 0, y: 50, rotate: -5 }}
-            animate={{ opacity: 1, y: 0, rotate: -3 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+        <div className="w-full flex justify-evenly">
+          <div
+            className="h-130 w-120 bg-cover bg-center  flex items-center justify-center text-center top-80"
+            style={{ backgroundImage: "url('/paper2.png')" }}
           >
-            {/* Ripped paper background */}
-            <Image
-              src="/ripped-paper.png"
-              alt="ripped-paper"
-              fill
-              className="object-cover rounded-xl"
-            />
+            <div className="w-[70%]">
+              <h1 className="text-5xl">EDUCATION</h1>
+              Systems Technology Institute
+            </div>
+          </div>
+          <div
+            className="h-100 w-160 bg-cover bg-center  flex items-center justify-center text-center top-80"
+            style={{ backgroundImage: "url('/ripped-paper.png')" }}
+          >
             <Skills />
-            {/* Content over ripped paper */}
-          </motion.div>
+          </div>
         </div>
       </div>
       {/* HERO */}

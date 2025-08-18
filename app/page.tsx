@@ -5,104 +5,51 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Github, Linkedin, Mail, ExternalLink } from "lucide-react";
 import Image from "next/image";
-import { div } from "framer-motion/client";
+import Skills from "@/components/Skills";
 
 export default function PortfolioHome() {
   return (
     <div className="bg-gray-50 text-gray-900 scroll-smooth">
-      <div className="relative w-screen h-screen">
-        <Image
-          src="/background1.png"
-          fill
-          alt="paper-grid"
-          className="absolute inset-0 object-cover z-0"
-        />
+      <div
+        className="w-screen h-screen bg-cover bg-center px-40"
+        style={{ backgroundImage: "url('/background1.png')" }}
+      >
+        <div className="">
+          <h1 className="text-3xl">Hello, I&apos;m John Raison V. Salvador</h1>
+          <p>
+            I am a 25-year-old full-stack programmer from Rizal, Philippines,
+            with a strong passion for creating innovative and efficient digital
+            solutions. My expertise lies in building modern web applications
+            using technologies such as Next.js, Express, and React, allowing me
+            to handle both front-end and back-end development with ease. I
+            thrive on solving complex problems through code, continuously
+            learning, and pushing myself to improve my skills. Programming isn’t
+            just a career for me—it’s something I genuinely enjoy and dedicate
+            myself to, as it allows me to turn ideas into impactful, real-world
+            applications.
+          </p>
+        </div>
 
-        <div>
+        <div className="flex items-center justify-center h-full">
           {/* Ripped paper with animation */}
           <motion.div
-            className="relative rotate-[-1deg] max-w-150 h-[300px] w-full"
+            className="relative rotate-[-1deg] w-[90%] max-w-4xl h-[300px] flex flex-col items-center justify-center"
             initial={{ opacity: 0, y: 50, rotate: -5 }}
             animate={{ opacity: 1, y: 0, rotate: -3 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            {/* Background ripped paper */}
+            {/* Ripped paper background */}
             <Image
               src="/ripped-paper.png"
-              fill
               alt="ripped-paper"
-              className="absolute inset-0 object-cover"
+              fill
+              className="object-cover rounded-xl"
             />
-
-            {/* Animated text */}
-            <motion.h1
-              className="absolute left-22 top-12 z-10 text-5xl font-bold text-black"
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.3, delay: 0 }}
-            >
-              Skills
-            </motion.h1>
-
-            {/* Animated list */}
-            <motion.ul
-              className="absolute left-24 top-28 z-10 text-xl font-bold text-black space-y-2 list-disc"
-              initial="hidden"
-              animate="visible"
-              variants={{
-                hidden: { opacity: 0, y: 20 },
-                visible: {
-                  opacity: 1,
-                  y: 0,
-                  transition: {
-                    staggerChildren: 0.2,
-                  },
-                },
-              }}
-            >
-              {["NextJS", "React", "Express"].map((skill, i) => (
-                <motion.li
-                  key={i}
-                  variants={{
-                    hidden: { opacity: 0, y: 20 },
-                    visible: { opacity: 1, y: 0 },
-                  }}
-                >
-                  {skill}
-                </motion.li>
-              ))}
-            </motion.ul>
-            <motion.ul
-              className="absolute right-24 top-28 z-10 text-xl font-bold text-black space-y-2 list-disc"
-              initial="hidden"
-              animate="visible"
-              variants={{
-                hidden: { opacity: 0, y: 20 },
-                visible: {
-                  opacity: 1,
-                  y: 0,
-                  transition: {
-                    staggerChildren: 0.2,
-                  },
-                },
-              }}
-            >
-              {["NextJS", "React", "Express"].map((skill, i) => (
-                <motion.li
-                  key={i}
-                  variants={{
-                    hidden: { opacity: 0, y: 20 },
-                    visible: { opacity: 1, y: 0 },
-                  }}
-                >
-                  {skill}
-                </motion.li>
-              ))}
-            </motion.ul>
+            <Skills />
+            {/* Content over ripped paper */}
           </motion.div>
         </div>
       </div>
-
       {/* HERO */}
       <section className="min-h-screen flex flex-col items-center justify-center text-center px-6">
         <motion.h1

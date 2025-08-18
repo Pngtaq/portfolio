@@ -5,13 +5,13 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Github, Linkedin, Mail, ExternalLink } from "lucide-react";
 
-export default function Portfolio() {
+export default function PortfolioHome() {
   return (
-    <div className="bg-gray-50 text-gray-900">
+    <div className="bg-gray-50 text-gray-900 scroll-smooth">
       {/* HERO */}
       <section className="min-h-screen flex flex-col items-center justify-center text-center px-6">
         <motion.h1
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           className="text-5xl font-bold mb-4"
@@ -24,15 +24,15 @@ export default function Portfolio() {
           transition={{ delay: 0.4, duration: 0.8 }}
           className="text-lg max-w-xl mb-6 text-gray-600"
         >
-          A passionate Full-Stack Developer building modern web apps with
-          exceptional user experiences.
+          A passionate Full-Stack Developer crafting beautiful, performant, and
+          user-focused web applications.
         </motion.p>
         <div className="flex gap-4">
           <Button asChild>
-            <a href="#projects">View Projects</a>
+            <a href="#projects">View My Work</a>
           </Button>
           <Button variant="outline" asChild>
-            <a href="#contact">Contact Me</a>
+            <a href="#contact">Get In Touch</a>
           </Button>
         </div>
       </section>
@@ -48,10 +48,11 @@ export default function Portfolio() {
         >
           About Me
         </motion.h2>
-        <p className="text-gray-700 leading-relaxed">
-          I specialize in building high-quality web applications with modern
-          technologies. With a focus on clean code, performance, and user
-          experience, I aim to deliver products that make an impact.
+        <p className="text-gray-700 leading-relaxed text-lg">
+          I'm a software engineer with a strong focus on building web
+          applications that balance functionality with delightful design. I
+          enjoy working with modern technologies like Next.js, Tailwind, and
+          TypeScript while always staying curious and learning new tools.
         </p>
       </section>
 
@@ -66,29 +67,52 @@ export default function Portfolio() {
         >
           Projects
         </motion.h2>
+
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {[1, 2, 3].map((i) => (
+          {[
+            {
+              title: "Portfolio Website",
+              desc: "A responsive portfolio built with Next.js, Tailwind, and Framer Motion.",
+              demo: "#",
+              code: "#",
+            },
+            {
+              title: "Task Manager",
+              desc: "A full-stack app to manage tasks with authentication and real-time updates.",
+              demo: "#",
+              code: "#",
+            },
+            {
+              title: "E-commerce Store",
+              desc: "A modern e-commerce site with product listings, cart, and checkout flow.",
+              demo: "#",
+              code: "#",
+            },
+          ].map((project, i) => (
             <motion.div
               key={i}
               whileHover={{ scale: 1.05 }}
               className="transition"
             >
-              <Card className="shadow-lg">
-                <CardContent className="p-6">
-                  <h3 className="font-semibold text-xl mb-2">Project {i}</h3>
-                  <p className="text-gray-600 mb-4">
-                    A short description of what this project does and the tech
-                    used.
-                  </p>
-                  <div className="flex gap-4">
+              <Card className="shadow-lg h-full flex flex-col">
+                <CardContent className="p-6 flex flex-col justify-between h-full">
+                  <div>
+                    <h3 className="font-semibold text-xl mb-2">
+                      {project.title}
+                    </h3>
+                    <p className="text-gray-600 mb-4">{project.desc}</p>
+                  </div>
+                  <div className="flex gap-4 mt-auto">
                     <a
-                      href="#"
+                      href={project.demo}
+                      target="_blank"
                       className="flex items-center gap-1 text-blue-600 hover:underline"
                     >
                       <ExternalLink size={16} /> Demo
                     </a>
                     <a
-                      href="#"
+                      href={project.code}
+                      target="_blank"
                       className="flex items-center gap-1 text-gray-800 hover:underline"
                     >
                       <Github size={16} /> Code
@@ -96,6 +120,30 @@ export default function Portfolio() {
                   </div>
                 </CardContent>
               </Card>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* SKILLS */}
+      <section id="skills" className="py-20 px-6 max-w-5xl mx-auto">
+        <motion.h2
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-3xl font-bold mb-10 text-center"
+        >
+          Skills
+        </motion.h2>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          {["Next.js", "React", "Tailwind", "TypeScript"].map((skill, i) => (
+            <motion.div
+              key={i}
+              whileHover={{ scale: 1.1 }}
+              className="p-6 bg-white rounded-xl shadow-md"
+            >
+              <p className="font-semibold">{skill}</p>
             </motion.div>
           ))}
         </div>
@@ -113,7 +161,7 @@ export default function Portfolio() {
           Contact Me
         </motion.h2>
         <p className="text-gray-700 mb-6">
-          I'm open to opportunities and collaborations. Feel free to reach out!
+          Let's connect! I'm open to opportunities and collaborations.
         </p>
         <div className="flex justify-center gap-6">
           <a href="mailto:youremail@example.com">

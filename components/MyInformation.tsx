@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Skills from "./Skills";
 import { Atma } from "next/font/google";
+import HandWritingAnimation from "./HandWritingAnimation";
 const atmaFont = Atma({
   subsets: ["latin"],
   weight: ["300", "400", "600", "500", "700"],
@@ -74,11 +75,14 @@ export default function MyInformation() {
           <Skills />
         </div>
       </div>
-      <div className="rotate-[-2deg]">
-        <h1 className="text-5xl font-bold">CONTACT</h1>
-        <p>ronchan.dev@gmail.com</p>
-        <p>(+63)9629707551</p>
-        <p>https://www.linkedin.com/in/john-raison-salvador-9a8b62271/</p>
+      <div className="grid grid-cols-2">
+        <div className="rotate-[-2deg]">
+          <h1 className="text-5xl font-bold">CONTACT</h1>
+          <p>ronchan.dev@gmail.com</p>
+          <p>(+63)9629707551</p>
+          <p>https://www.linkedin.com/in/john-raison-salvador-9a8b62271/</p>
+        </div>
+        <HandWritingAnimation>Full-stack Web Developer</HandWritingAnimation>
       </div>
     </div>
   );

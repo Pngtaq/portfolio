@@ -1,24 +1,29 @@
 "use client";
-
+import { Atma } from "next/font/google";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Github, Linkedin, Mail, ExternalLink } from "lucide-react";
 import Image from "next/image";
 import Skills from "@/components/Skills";
+import { button } from "framer-motion/client";
 
+const atmaFont = Atma({
+  subsets: ["latin"],
+  weight: ["300", "400", "600", "500", "700"],
+});
 export default function PortfolioHome() {
   return (
     <div className="bg-gray-50 text-gray-900 scroll-smooth">
       <div
-        className="min-h-screen bg-cover bg-center relative px-40"
+        className={`min-h-screen bg-cover bg-center relative px-40 ${atmaFont.className} `}
         style={{ backgroundImage: "url('/background.png')" }}
       >
         <div className="grid grid-cols-2 pt-2 ">
           <div className="">
             <h1 className="text-3xl">
-              <span className="text-6xl">Hello!</span> I&apos;m John Raison V.
-              Salvador
+              <span className="text-6xl font-bold">Hello!</span> I&apos;m John
+              Raison V. Salvador
             </h1>
             <p>
               I am a 25-year-old full-stack programmer from Rizal, Philippines,
@@ -30,6 +35,14 @@ export default function PortfolioHome() {
               through code, continuously learning, and pushing myself to improve
               my skills.
             </p>
+            <div>
+              <button className="border-1 border-black px-4 py-2 rounded-md">
+                Github
+              </button>
+              <button className="border-1 border-black px-4 py-2 rounded-md">
+                Resume
+              </button>
+            </div>
           </div>
 
           <div className="justify-self-center rotate-[3deg]">

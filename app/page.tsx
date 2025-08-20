@@ -11,10 +11,10 @@ export default function PortfolioHome() {
   return (
     <div className="bg-gray-50 text-gray-900 scroll-smooth">
       <div
-        className="min-h-screen bg-cover bg-center relative "
+        className="min-h-screen bg-cover bg-center relative px-40"
         style={{ backgroundImage: "url('/background.png')" }}
       >
-        <div className="grid grid-cols-1 pt-2 lg:grid-cols-3 ">
+        <div className="grid grid-cols-2 pt-2 ">
           <div className="">
             <h1 className="text-3xl">
               <span className="text-6xl">Hello!</span> I&apos;m John Raison V.
@@ -33,13 +33,7 @@ export default function PortfolioHome() {
           </div>
 
           <div className="justify-self-center rotate-[3deg]">
-            <Image src="/me.png" width={250} height={10} alt="me" />
-          </div>
-          <div className="text-start">
-            <h1 className="text-5xl">CONTACT</h1>
-            <p>ronchan.dev@gmail.com</p>
-            <p>(+63)9629707551</p>
-            <p>https://www.linkedin.com/in/john-raison-salvador-9a8b62271/</p>
+            <Image src="/me.png" width={300} height={10} alt="me" />
           </div>
         </div>
         <div className="w-full flex justify-evenly flex-wrap">
@@ -47,21 +41,32 @@ export default function PortfolioHome() {
             className="h-110 w-120 bg-cover bg-center  flex items-center justify-center text-center"
             style={{ backgroundImage: "url('/paper2.png')" }}
           >
-            <div className="w-[70%]">
-              <h1 className="text-5xl">EDUCATION</h1>
-              Systems Technology Institute
+            <div className="w-[73%] space-y-1 flex items-center flex-col">
+              <div className="w-3/4">
+                <h1 className="text-5xl">EDUCATION</h1>
+                <ul className="list-disc">
+                  <li>
+                    <h1>Binangonan Catholic College (2006-2020)</h1>
+                  </li>
+                  <li>
+                    <h1>Systems Technology Institute (2022-2025)</h1>{" "}
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
           <div
-            className="h-100 w-160 bg-cover bg-center  flex items-center justify-center text-center rotate-[-3deg]"
+            className="h-100 min-w-[50%] max-w-150 bg-cover bg-center  flex items-center justify-center text-center rotate-[-3deg]"
             style={{ backgroundImage: "url('/ripped-paper.png')" }}
           >
             <Skills />
           </div>
         </div>
-
-        <div>
-          <h1 className="text-center text-5xl">TABLE OF CONTENTS</h1>
+        <div className="rotate-[-2deg]">
+          <h1 className="text-5xl">CONTACT</h1>
+          <p>ronchan.dev@gmail.com</p>
+          <p>(+63)9629707551</p>
+          <p>https://www.linkedin.com/in/john-raison-salvador-9a8b62271/</p>
         </div>
       </div>
       {/* HERO */}

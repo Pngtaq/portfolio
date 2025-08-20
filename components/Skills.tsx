@@ -16,7 +16,7 @@ export default function Skills() {
       </motion.h1>
 
       {/* Lists in two columns */}
-      <div className="flex justify-evenly w-full text-xl font-bold text-black">
+      <div className="flex justify-evenly w-full text-xl  text-black">
         <motion.ul
           className="list-disc pl-6 space-y-2"
           initial="hidden"

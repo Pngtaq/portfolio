@@ -45,15 +45,23 @@ export default function MyInformation() {
           className="h-110 w-120 bg-cover bg-center  flex items-center justify-center text-center"
           style={{ backgroundImage: "url('/paper2.png')" }}
         >
-          <div className="w-[73%] space-y-1 flex items-center flex-col">
-            <div className="w-3/4">
-              <h1 className="text-5xl">EDUCATION</h1>
-              <ul className="list-disc">
+          <div className="w-[73%] pt-13 flex items-center flex-col">
+            <div className="w-3/4 text-start">
+              <h1 className="text-5xl font-bold">EDUCATION</h1>
+              <ul className="list-disc space-y-3">
                 <li>
-                  <h1>Binangonan Catholic College (2006-2020)</h1>
+                  <h1 className="font-semibold">
+                    Binangonan Catholic College (2006-2020)
+                  </h1>
+                  <h1>Primary & Secondary Education</h1>
+                  <h1>Binangonan Rizal</h1>
                 </li>
                 <li>
-                  <h1>Systems Technology Institute (2022-2025)</h1>{" "}
+                  <h1 className="font-semibold">
+                    Systems Technology Institute (2022-2025)
+                  </h1>
+                  <h1>Computer Science</h1>
+                  <h1>Binangonan Rizal</h1>
                 </li>
               </ul>
             </div>
@@ -67,7 +75,7 @@ export default function MyInformation() {
         </div>
       </div>
       <div className="rotate-[-2deg]">
-        <h1 className="text-5xl">CONTACT</h1>
+        <h1 className="text-5xl font-bold">CONTACT</h1>
         <p>ronchan.dev@gmail.com</p>
         <p>(+63)9629707551</p>
         <p>https://www.linkedin.com/in/john-raison-salvador-9a8b62271/</p>

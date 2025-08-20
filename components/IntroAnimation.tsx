@@ -24,7 +24,7 @@ export default function IntroAnimation({ children }: IntroAnimationProps) {
   }, []);
 
   return (
-    <div className="relative h-screen w-screen overflow-hidden bg-gray-100">
+    <div className="relative h-screen overflow-hidden bg-gray-100">
       {/* Left Page */}
       <motion.div
         className="absolute top-0 left-0 h-full w-1/2 bg-gray-900 flex items-center justify-center text-white text-4xl font-bold z-20"

@@ -18,12 +18,13 @@ export default function HandwritingText({
         width="100%"
         height="120"
         viewBox="0 0 800 120"
-        className="stroke-black  stroke-[3px]"
+        className="stroke-black stroke-[2px] sm:stroke-[3px]"
       >
         <text
           x="20"
           y="80"
-          fontSize="60"
+          fontSize="40"
+          className="sm:text-5xl lg:text-6xl"
           //   fontFamily="'Pacifico', cursive" // handwriting font
           strokeDasharray="2000"
           strokeDashoffset="2000"

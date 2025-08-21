@@ -9,16 +9,17 @@ const atmaFont = Atma({
 export default function MyInformation() {
   return (
     <div
-      className={`min-h-screen bg-cover bg-center relative px-40 py-3 ${atmaFont.className} `}
+      className={`bg-cover bg-center relative py-3 ${atmaFont.className}`}
       style={{ backgroundImage: "url('/background.png')" }}
     >
-      <div className="grid grid-cols-2 pt-2 ">
-        <div className="">
-          <h1 className="text-3xl">
-            <span className="text-6xl font-bold">Hello!</span> I&apos;m John
+      {/* Hero Section */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 pt-2 px-4">
+        <div className="space-y-4">
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl">
+            <span className="text-4xl sm:text-5xl lg:text-6xl font-bold">Hello!</span> I&apos;m John
             Raison V. Salvador
           </h1>
-          <p>
+          <p className="text-sm sm:text-base lg:text-lg text-gray-700 leading-relaxed">
             I am a 25-year-old full-stack programmer from Rizal, Philippines,
             with a strong passion for creating innovative and efficient digital
             solutions. My expertise lies in building modern web applications
@@ -28,28 +29,38 @@ export default function MyInformation() {
             learning, and pushing myself to improve my skills.
           </p>
           <div className="space-x-3">
-            <button className="border-1 border-black px-4 py-2 rounded-md">
+            <button className="border border-black px-3 py-2 rounded-md text-sm sm:text-base hover:bg-black hover:text-white transition-colors">
               Github
             </button>
-            <button className="border-1 border-black px-4 py-2 rounded-md">
+            <button className="border border-black px-3 py-2 rounded-md text-sm sm:text-base hover:bg-black hover:text-white transition-colors">
               Resume
             </button>
           </div>
         </div>
 
-        <div className="justify-self-center rotate-[3deg]">
-          <Image src="/me.png" width={300} height={10} alt="me" />
+        <div className="flex justify-center lg:justify-self-center">
+          <div className="rotate-[3deg] transform">
+            <Image 
+              src="/me.png" 
+              width={300} 
+              height={300} 
+              alt="me" 
+              className="w-48 h-48 sm:w-64 sm:h-64 lg:w-72 lg:h-72"
+            />
+          </div>
         </div>
       </div>
-      <div className="w-full flex justify-evenly flex-wrap">
+
+      {/* Education and Skills Section */}
+      <div className="w-full flex flex-col lg:flex-row justify-evenly gap-6 mt-8 px-4">
         <div
-          className="h-110 w-120 bg-cover bg-center  flex items-center justify-center text-center"
+          className="min-h-[400px] w-full lg:w-1/2 bg-cover bg-center flex items-center justify-center text-center p-6"
           style={{ backgroundImage: "url('/paper2.png')" }}
         >
-          <div className="w-[73%] pt-13 flex items-center flex-col">
-            <div className="w-3/4 text-start">
-              <h1 className="text-5xl font-bold">EDUCATION</h1>
-              <ul className="list-disc space-y-3">
+          <div className="w-full max-w-md">
+            <div className="text-start">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">EDUCATION</h1>
+              <ul className="list-disc space-y-3 text-sm sm:text-base">
                 <li>
                   <h1 className="font-semibold">
                     Binangonan Catholic College (2006-2020)
@@ -68,21 +79,29 @@ export default function MyInformation() {
             </div>
           </div>
         </div>
+        
         <div
-          className="h-100 min-w-[50%] max-w-150 bg-cover bg-center  flex items-center justify-center text-center rotate-[-3deg]"
+          className="min-h-[400px] w-full lg:w-1/2 bg-cover bg-center flex items-center justify-center text-center p-6 transform"
           style={{ backgroundImage: "url('/ripped-paper.png')" }}
         >
           <Skills />
         </div>
       </div>
-      <div className="grid grid-cols-2">
-        <div className="rotate-[-2deg]">
-          <h1 className="text-5xl font-bold">CONTACT</h1>
-          <p>ronchan.dev@gmail.com</p>
-          <p>(+63)9629707551</p>
-          <p>https://www.linkedin.com/in/john-raison-salvador-9a8b62271/</p>
+
+      {/* Contact and Title Section */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-8 px-4">
+        <div className="transform -rotate-2 lg:-rotate-2">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">CONTACT</h1>
+          <div className="space-y-2 text-sm sm:text-base">
+            <p>ronchan.dev@gmail.com</p>
+            <p>(+63)9629707551</p>
+            <p className="break-all">https://www.linkedin.com/in/john-raison-salvador-9a8b62271/</p>
+          </div>
         </div>
-        <HandWritingAnimation>Full-stack Web Developer</HandWritingAnimation>
+        
+        <div className="flex justify-center lg:justify-end">
+          <HandWritingAnimation>Full-stack Web Developer</HandWritingAnimation>
+        </div>
       </div>
     </div>
   );

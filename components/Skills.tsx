@@ -4,10 +4,10 @@ import NextjsSVG from "./ui/svg/NextjsSVG";
 
 export default function Skills() {
   return (
-    <div className="relative z-10 w-full px-10 flex flex-col items-center">
+    <div className="relative z-10 w-full px-4 sm:px-10 flex flex-col items-center">
       {/* Animated title */}
       <motion.h1
-        className="text-5xl font-bold text-black mb-6"
+        className="text-3xl sm:text-4xl lg:text-5xl font-bold text-black mb-4 sm:mb-6"
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.3 }}
@@ -16,9 +16,9 @@ export default function Skills() {
       </motion.h1>
 
       {/* Lists in two columns */}
-      <div className="flex justify-evenly w-full text-xl  text-black">
+      <div className="flex justify-evenly w-full text-lg sm:text-xl text-black">
         <motion.ul
-          className="list-disc pl-6 space-y-2"
+          className="list-disc pl-4 sm:pl-6 space-y-2"
           initial="hidden"
           animate="visible"
           variants={{
@@ -44,7 +44,7 @@ export default function Skills() {
         </motion.ul>
 
         <motion.ul
-          className="list-disc pl-6 space-y-2"
+          className="list-disc pl-4 sm:pl-6 space-y-2"
           initial="hidden"
           animate="visible"
           variants={{

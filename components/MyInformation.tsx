@@ -51,8 +51,12 @@ export default function MyInformation() {
       initial="hidden"
       animate="visible"
     >
-      {/* Hero Section */}
-      <div className="max-w-7xl mx-auto px-6">
+      {/* Light overlay to brighten the background */}
+      <div className="absolute inset-0 bg-white/60 backdrop-blur-sm"></div>
+      
+      {/* Content container */}
+      <div className="relative z-10 max-w-7xl mx-auto px-6">
+        {/* Hero Section */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
           <motion.div className="space-y-8" variants={itemVariants}>
             {/* Greeting */}
@@ -63,7 +67,7 @@ export default function MyInformation() {
                   animate={{ scale: [1, 1.5, 1] }}
                   transition={{ duration: 2, repeat: Infinity }}
                 />
-                <span className="text-green-600 text-sm font-medium">Available for opportunities</span>
+                <span className="text-green-700 text-sm font-medium">Available for opportunities</span>
               </motion.div>
               
               <motion.h1 
@@ -131,7 +135,7 @@ export default function MyInformation() {
               ].map((stat, index) => (
                 <motion.div
                   key={index}
-                  className="text-center p-4 bg-white/80 backdrop-blur-sm rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
+                  className="text-center p-4 bg-white/95 backdrop-blur-sm rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
                   whileHover={{ scale: 1.05 }}
                 >
                   <stat.icon className="w-6 h-6 mx-auto mb-2 text-blue-600" />
@@ -158,7 +162,7 @@ export default function MyInformation() {
             >
               {/* Profile Image Container */}
               <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-400 to-purple-600 rounded-3xl transform rotate-6 scale-105 opacity-20 blur-xl"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-400 to-purple-600 rounded-3xl transform rotate-6 scale-105 opacity-30 blur-xl"></div>
                 <div className="relative bg-white p-2 rounded-3xl shadow-2xl">
                   <Image 
                     src="/me.png" 
@@ -207,8 +211,8 @@ export default function MyInformation() {
               transition: { duration: 0.3 }
             }}
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/20 to-orange-400/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
-            <div className="relative bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-yellow-200/50">
+            <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/30 to-orange-400/30 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
+            <div className="relative bg-white/98 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-yellow-200/50">
               {/* Header */}
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-12 h-12 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-xl flex items-center justify-center">
@@ -269,8 +273,8 @@ export default function MyInformation() {
               transition: { duration: 0.3 }
             }}
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
-            <div className="relative bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-blue-200/50 h-full">
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-400/30 to-purple-400/30 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
+            <div className="relative bg-white/98 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-blue-200/50 h-full">
               <Skills />
             </div>
           </motion.div>
@@ -309,13 +313,13 @@ export default function MyInformation() {
                   href={contact.href}
                   target={contact.href.startsWith('http') ? "_blank" : "_self"}
                   rel={contact.href.startsWith('http') ? "noopener noreferrer" : ""}
-                  className="flex items-center gap-4 p-4 bg-white/80 backdrop-blur-sm rounded-xl shadow-md hover:shadow-lg transition-all duration-300 group hover:bg-white"
+                  className="flex items-center gap-4 p-4 bg-white/95 backdrop-blur-sm rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group hover:bg-white border border-gray-100"
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 1.7 + index * 0.1, duration: 0.6 }}
                   whileHover={{ x: 5, scale: 1.02 }}
                 >
-                  <div className={`w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center group-hover:bg-gray-200 transition-colors`}>
+                  <div className={`w-10 h-10 bg-gray-50 rounded-lg flex items-center justify-center group-hover:bg-gray-100 transition-colors`}>
                     <contact.icon className={`w-5 h-5 ${contact.color}`} />
                   </div>
                   <div className="flex-1">
@@ -364,7 +368,7 @@ export default function MyInformation() {
 
       {/* Floating decorative elements */}
       <motion.div
-        className="absolute top-20 right-10 w-20 h-20 bg-blue-200 rounded-full opacity-20"
+        className="absolute top-20 right-10 w-20 h-20 bg-blue-200 rounded-full opacity-30"
         animate={{ 
           y: [0, -30, 0],
           x: [0, 20, 0],
@@ -373,7 +377,7 @@ export default function MyInformation() {
         transition={{ duration: 6, repeat: Infinity }}
       />
       <motion.div
-        className="absolute bottom-32 left-16 w-16 h-16 bg-purple-200 rounded-full opacity-20"
+        className="absolute bottom-32 left-16 w-16 h-16 bg-purple-200 rounded-full opacity-30"
         animate={{ 
           y: [0, 25, 0],
           x: [0, -15, 0],

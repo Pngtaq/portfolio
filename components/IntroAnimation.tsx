@@ -23,6 +23,30 @@ export default function IntroAnimation({ children }: IntroAnimationProps) {
     };
   }, []);
 
+  // Predefined particle positions to avoid hydration mismatches
+  const particlePositions = [
+    { left: "10%", top: "15%", delay: 0 },
+    { left: "85%", top: "25%", delay: 0.5 },
+    { left: "20%", top: "45%", delay: 1 },
+    { left: "75%", top: "65%", delay: 1.5 },
+    { left: "45%", top: "35%", delay: 2 },
+    { left: "90%", top: "75%", delay: 0.3 },
+    { left: "15%", top: "85%", delay: 0.8 },
+    { left: "60%", top: "20%", delay: 1.3 },
+    { left: "30%", top: "70%", delay: 1.8 },
+    { left: "80%", top: "40%", delay: 0.2 },
+    { left: "25%", top: "30%", delay: 0.7 },
+    { left: "70%", top: "80%", delay: 1.2 },
+    { left: "40%", top: "60%", delay: 1.7 },
+    { left: "95%", top: "50%", delay: 0.4 },
+    { left: "5%", top: "55%", delay: 0.9 },
+    { left: "55%", top: "10%", delay: 1.4 },
+    { left: "35%", top: "90%", delay: 1.9 },
+    { left: "65%", top: "5%", delay: 0.1 },
+    { left: "50%", top: "25%", delay: 0.6 },
+    { left: "10%", top: "75%", delay: 1.1 }
+  ];
+
   return (
     <div className="relative min-h-screen overflow-hidden bg-gray-100">
       {/* Animated Background Particles */}
@@ -32,24 +56,24 @@ export default function IntroAnimation({ children }: IntroAnimationProps) {
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        {[...Array(20)].map((_, i) => (
+        {particlePositions.map((particle, i) => (
           <motion.div
             key={i}
             className="absolute w-1 h-1 bg-blue-400 rounded-full opacity-20"
             style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
+              left: particle.left,
+              top: particle.top,
             }}
             animate={{
               y: [0, -30, 0],
-              x: [0, Math.random() * 20 - 10, 0],
+              x: [0, i % 2 === 0 ? 10 : -10, 0],
               scale: [1, 1.5, 1],
               opacity: [0.2, 0.6, 0.2],
             }}
             transition={{
-              duration: 3 + Math.random() * 2,
+              duration: 3 + (i % 3),
               repeat: Infinity,
-              delay: Math.random() * 2,
+              delay: particle.delay,
             }}
           />
         ))}
@@ -161,7 +185,7 @@ export default function IntroAnimation({ children }: IntroAnimationProps) {
 
       {/* Page Turn Effect Overlay */}
       <motion.div
-        className="absolute inset-0 bg-black/20 z-15"
+        className="absolute inset-0  z-15"
         initial={{ opacity: 0 }}
         animate={{ opacity: open ? 1 : 0 }}
         transition={{ duration: 0.5, delay: 0.5 }}

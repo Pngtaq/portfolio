@@ -1,6 +1,6 @@
 "use client";
 import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import {  useScroll, useTransform } from "framer-motion";
 import IntroAnimation from "@/components/IntroAnimation";
 import MyInformation from "@/components/MyInformation";
 import HeroSection from "@/components/HeroSection";
@@ -18,8 +18,8 @@ export default function PortfolioHome() {
     offset: ["start start", "end end"]
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
-  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+
+
 
   return (
     <div ref={containerRef} className="bg-gray-50 text-gray-900 scroll-smooth">
@@ -30,9 +30,8 @@ export default function PortfolioHome() {
       <ScrollIndicator />
       
 
-
       <ProjectsSection />
-
+    
       <ContactSection />
       <Footer />
     </div>

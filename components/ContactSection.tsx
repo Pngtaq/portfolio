@@ -38,7 +38,7 @@ export default function ContactSection() {
         transition={{ duration: 0.8 }}
         className="text-4xl md:text-5xl font-bold mb-8 relative z-10"
       >
-        Let's Connect!
+        Let&apos;s Connect!
       </motion.h2>
       
       <motion.p 
@@ -48,7 +48,7 @@ export default function ContactSection() {
         viewport={{ once: true }}
         transition={{ duration: 0.8, delay: 0.2 }}
       >
-        I'm always open to discussing new opportunities, interesting projects, and creative ideas.
+        I&apos;m always open to discussing new opportunities, interesting projects, and creative ideas.
       </motion.p>
       
       <motion.div 

@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowDown, Code, Globe } from "lucide-react";
+import {  Code, Globe } from "lucide-react";
 
 export default function HeroSection() {
   return (
@@ -32,7 +32,7 @@ export default function HeroSection() {
           transition={{ duration: 0.8 }}
           className="text-5xl md:text-7xl font-bold mb-4"
         >
-          Hi, I'm <motion.span 
+          Hi, I&apos;m <motion.span 
             className="text-blue-600 relative"
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 400 }}

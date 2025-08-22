@@ -42,7 +42,7 @@ export default function AboutSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            I'm a software engineer with a strong focus on building web
+            I&apos;m a software engineer with a strong focus on building web
             applications that balance functionality with delightful design. I
             enjoy working with modern technologies like Next.js, Tailwind, and
             TypeScript while always staying curious and learning new tools.

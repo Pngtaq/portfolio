@@ -23,19 +23,13 @@ export default function Skills() {
       transition: { 
         duration: 0.6, 
         ease: "easeOut" as const,
-        type: "spring",
+        type: "spring" as const,
         stiffness: 100
       }
     }
   };
 
-  const iconVariants = {
-    hover: {
-      scale: 1.2,
-      rotate: [0, -10, 10, 0],
-      transition: { duration: 0.3 }
-    }
-  };
+
 
   return (
     <motion.div 

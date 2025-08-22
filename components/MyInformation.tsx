@@ -3,7 +3,7 @@ import Skills from "./Skills";
 import { Atma } from "next/font/google";
 import HandWritingAnimation from "./HandWritingAnimation";
 import { motion } from "framer-motion";
-import { Github, FileText, Mail, Phone, MapPin, ExternalLink, Download, Star, Award, BookOpen } from "lucide-react";
+import { Github, Mail, Phone, MapPin, ExternalLink, Download, Star, Award, BookOpen } from "lucide-react";
 
 const atmaFont = Atma({
   subsets: ["latin"],
@@ -298,7 +298,7 @@ export default function MyInformation() {
                 </div>
                 Get In Touch
               </h2>
-              <p className="text-lg text-gray-600">I'm always open to discussing new opportunities and exciting projects.</p>
+              <p className="text-lg text-gray-600">I&apos;m always open to discussing new opportunities and exciting projects.</p>
             </div>
             
             <div className="space-y-4">

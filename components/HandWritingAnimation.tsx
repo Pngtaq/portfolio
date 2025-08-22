@@ -75,7 +75,7 @@ export default function HandwritingText({
           transition={{ 
             delay: duration * 0.8, 
             duration: 2,
-            ease: "easeOut"
+            ease: "easeOut" as const
           }}
           className="opacity-0 group-hover:opacity-100 transition-opacity duration-500"
         />

@@ -29,10 +29,10 @@ export default function PortfolioHome() {
       
       <ScrollIndicator />
       
-      <HeroSection />
-      <AboutSection />
+
+
       <ProjectsSection />
-      <SkillsSection />
+
       <ContactSection />
       <Footer />
     </div>

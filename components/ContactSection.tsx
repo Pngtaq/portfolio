@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { Mail, Github, Linkedin, ExternalLink } from "lucide-react";
+import { Mail, Github, Linkedin } from "lucide-react";
 
 const socialLinks = [
   { icon: Mail, href: "mailto:ronchan.dev@gmail.com", label: "Email", color: "hover:text-red-500" },

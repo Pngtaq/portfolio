@@ -1,0 +1,52 @@
+# John Raison V. Salvador - Resume
+
+## Contact Information
+- Email: raisonsalvador0@gmail.com
+- Phone: (+63) 962-970-7551
+- Location: Rizal, Philippines
+- GitHub: https://github.com/Pngtaq
+- LinkedIn: https://www.linkedin.com/in/john-raison-salvador-9a8b62271/
+
+## Professional Summary
+Full-stack web developer with 3+ years of experience in building modern web applications. Passionate about creating innovative and efficient digital solutions using technologies such as Next.js, React, Express, and Supabase.
+
+## Technical Skills
+- **Frontend**: React, Next.js, TypeScript, JavaScript, HTML, CSS, Tailwind CSS
+- **Backend**: Node.js, Express, Supabase, Firebase
+- **Tools**: Git, GitHub, VS Code, ChatGPT, GitHub Copilot
+- **Other**: Context API, Redux Toolkit, React Query
+
+## Experience
+### Full-Stack Web Developer (3+ years)
+- Developed responsive web applications using React and Next.js
+- Implemented authentication systems using Supabase and Auth.js
+- Created RESTful APIs using Express.js
+- Collaborated with teams using Git and GitHub
+- Built 15+ projects showcasing various technologies
+
+## Projects
+### Devcuments
+- **Tech Stack**: React, Supabase, Tailwind CSS, Markdown-react, Highlighter.js
+- **Description**: Documentation platform helping developers save and retrieve previous code
+- **Link**: documentation-three-psi.vercel.app
+
+### Workout AI
+- **Tech Stack**: Next.js, Tailwind CSS, Framer Motion, Auth.js, CohereAI
+- **Description**: AI-powered workout generator with personalized training plans
+- **Link**: workout-ai-piqg.vercel.app
+
+## Education
+- Bachelor's Degree in Computer Science (or relevant field)
+- Continuous learning in backend development and new technologies
+
+## Languages
+- English (Professional)
+- Filipino (Native)
+
+## Availability
+- Open to remote opportunities
+- Available for freelance projects
+- Willing to relocate for the right opportunity
+
+---
+*This is a placeholder resume. Please replace this file with your actual resume document.*

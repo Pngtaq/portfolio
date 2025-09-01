@@ -185,7 +185,7 @@ export default function IntroAnimation({ children }: IntroAnimationProps) {
 
       {/* Page Turn Effect Overlay */}
       <motion.div
-        className="absolute inset-0 z-15"
+        className="absolute inset-0 z-15 pointer-events-none"
         initial={{ opacity: 0 }}
         animate={{ opacity: open ? 1 : 0 }}
         transition={{ duration: 0.5, delay: 0.5 }}

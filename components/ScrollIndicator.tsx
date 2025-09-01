@@ -1,8 +1,30 @@
 "use client";
 import { motion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
+import { useState, useEffect } from "react";
 
 export default function ScrollIndicator() {
+  const [isVisible, setIsVisible] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+      const scrollPercentage = (scrollTop + windowHeight) / documentHeight;
+      
+      // Hide when user is at the bottom 10% of the page
+      setIsVisible(scrollPercentage < 0.9);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Check initial position
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  if (!isVisible) return null;
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}

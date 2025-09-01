@@ -333,7 +333,7 @@ export default function MyInformation() {
           
           {/* Title Animation */}
           <motion.div 
-            className="flex justify-center lg:justify-end"
+            className="flex justify-center"
             variants={itemVariants}
           >
             <div className="text-center">

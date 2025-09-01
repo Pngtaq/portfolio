@@ -102,25 +102,26 @@ export default function MyInformation() {
             
             {/* Action Buttons */}
             <motion.div 
-              className="flex flex-col sm:flex-row gap-4"
+              className="flex flex-col sm:flex-row gap-4 relative z-30"
               variants={itemVariants}
             >
-              <motion.button 
-                className="group bg-black text-white px-6 py-3 rounded-lg text-sm sm:text-base font-medium hover:bg-gray-800 transition-all duration-300 flex items-center justify-center gap-3 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-                whileHover={{ scale: 1.02, x: 5 }}
-                whileTap={{ scale: 0.98 }}
+              <a 
+                href="https://github.com/Pngtaq"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group bg-black text-white px-6 py-3 rounded-lg text-sm sm:text-base font-medium hover:bg-gray-800 transition-all duration-300 flex items-center justify-center gap-3 shadow-lg hover:shadow-xl transform hover:-translate-y-1 cursor-pointer"
               >
                 <Github className="w-5 h-5 group-hover:rotate-12 transition-transform" />
                 View GitHub
-              </motion.button>
-              <motion.button 
-                className="group border-2 border-black px-6 py-3 rounded-lg text-sm sm:text-base font-medium hover:bg-black hover:text-white transition-all duration-300 flex items-center justify-center gap-3 shadow-md hover:shadow-lg transform hover:-translate-y-1"
-                whileHover={{ scale: 1.02, x: 5 }}
-                whileTap={{ scale: 0.98 }}
+              </a>
+              <a 
+                href="/My Resume.txt"
+                download
+                className="group border-2 border-black px-6 py-3 rounded-lg text-sm sm:text-base font-medium hover:bg-black hover:text-white transition-all duration-300 flex items-center justify-center gap-3 shadow-md hover:shadow-lg transform hover:-translate-y-1 cursor-pointer"
               >
                 <Download className="w-5 h-5 group-hover:rotate-12 transition-transform" />
                 Download Resume
-              </motion.button>
+              </a>
             </motion.div>
 
             {/* Quick Stats */}
@@ -336,7 +337,7 @@ export default function MyInformation() {
             className="flex justify-center"
             variants={itemVariants}
           >
-            <div className="text-center">
+            <div className="text-center ">
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.3 }}
@@ -368,7 +369,7 @@ export default function MyInformation() {
 
       {/* Floating decorative elements */}
       <motion.div
-        className="absolute top-20 right-10 w-20 h-20 bg-blue-200 rounded-full opacity-30"
+        className="absolute top-20 right-10 w-20 h-20 bg-blue-200 rounded-full opacity-30 pointer-events-none"
         animate={{ 
           y: [0, -30, 0],
           x: [0, 20, 0],
@@ -377,7 +378,7 @@ export default function MyInformation() {
         transition={{ duration: 6, repeat: Infinity }}
       />
       <motion.div
-        className="absolute bottom-32 left-16 w-16 h-16 bg-purple-200 rounded-full opacity-30"
+        className="absolute bottom-32 left-16 w-16 h-16 bg-purple-200 rounded-full opacity-30 pointer-events-none"
         animate={{ 
           y: [0, 25, 0],
           x: [0, -15, 0],

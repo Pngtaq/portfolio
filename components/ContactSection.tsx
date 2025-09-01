@@ -4,8 +4,8 @@ import { Mail, Github, Linkedin } from "lucide-react";
 
 const socialLinks = [
   { icon: Mail, href: "mailto:ronchan.dev@gmail.com", label: "Email", color: "hover:text-red-500" },
-  { icon: Github, href: "https://github.com/yourgithub", label: "GitHub", color: "hover:text-gray-800" },
-  { icon: Linkedin, href: "https://linkedin.com/in/john-raison-salvador-9a8b62271/", label: "LinkedIn", color: "hover:text-blue-600" },
+  { icon: Github, href: "https://github.com/Pngtaq", label: "GitHub", color: "hover:text-gray-800" },
+  { icon: Linkedin, href: "https://www.linkedin.com/in/raisonsalvador/", label: "LinkedIn", color: "hover:text-blue-600" },
 ];
 
 export default function ContactSection() {

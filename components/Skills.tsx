@@ -1,6 +1,35 @@
+"use client";
 import { motion } from "framer-motion";
-import ReactSVG from "./ui/svg/ReactSVG";
 import NextjsSVG from "./ui/svg/NextjsSVG";
+import NextjsMonochromeSVG from "./ui/svg/NextjsMonochromeSVG";
+import ReactSVG from "./ui/svg/ReactSVG";
+import TailwindSVG from "./ui/svg/TailwindSVG";
+import TypescriptSVG from "./ui/svg/TypescriptSVG";
+import SupabaseSVG from "./ui/svg/SupabaseSVG";
+import GitSVG from "./ui/svg/GitSVG";
+import GithubSVG from "./ui/svg/GithubSVG";
+import ExpressSVG from "./ui/svg/ExpressSVG";
+import PrismaSVG from "./ui/svg/PrismaSVG";
+import VercelSVG from "./ui/svg/VercelSVG";
+import JavaSVG from "./ui/svg/JavaSVG";
+import HTMLSVG from "./ui/svg/HTMLSVG";
+import CSSSVG from "./ui/svg/CSSSVG";
+import JavaScriptSVG from "./ui/svg/JavaScriptSVG";
+
+const skills = [
+  { name: "Next.js", icon: NextjsMonochromeSVG, color: "from-gray-900 to-black" },
+  { name: "React", icon: ReactSVG, color: "from-cyan-500 to-cyan-600" },
+  { name: "TypeScript", icon: TypescriptSVG, color: "from-indigo-500 to-indigo-600" },
+  { name: "JavaScript", icon: JavaScriptSVG, color: "from-yellow-500 to-yellow-600" },
+  { name: "HTML", icon: HTMLSVG, color: "from-orange-500 to-orange-600" },
+  { name: "CSS", icon: CSSSVG, color: "from-blue-500 to-blue-600" },
+  { name: "Tailwind", icon: TailwindSVG, color: "from-teal-500 to-teal-600" },
+  { name: "Supabase", icon: SupabaseSVG, color: "from-emerald-500 to-emerald-600" },
+  { name: "Git", icon: GitSVG, color: "from-orange-400 to-orange-500" },
+  { name: "GitHub", icon: GithubSVG, color: "from-gray-800 to-black" },
+  { name: "Express", icon: ExpressSVG, color: "from-green-500 to-green-600" },
+  { name: "Prisma", icon: PrismaSVG, color: "from-purple-500 to-purple-600" },
+];
 
 export default function Skills() {
   const containerVariants = {
@@ -29,152 +58,53 @@ export default function Skills() {
     }
   };
 
-
-
   return (
-    <motion.div 
-      className="relative z-10 w-full px-4 sm:px-10 flex flex-col items-center"
-      variants={containerVariants}
-      initial="hidden"
-      animate="visible"
-    >
-      {/* Animated title */}
-      <motion.h1
-        className="text-3xl sm:text-4xl lg:text-5xl font-bold text-black mb-4 sm:mb-6"
-        initial={{ opacity: 0, x: -50 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" as const }}
-        whileHover={{ scale: 1.05 }}
-      >
-        Skills
-      </motion.h1>
-
-      {/* Lists in two columns */}
-      <div className="flex justify-evenly w-full text-lg sm:text-xl text-black">
-        <motion.ul
-          className="list-disc pl-4 sm:pl-6 space-y-2"
-          variants={containerVariants}
-        >
-          {["NextJS", "React", "Express"].map((skill, i) => (
-            <motion.li
-              key={i}
-              variants={skillVariants}
-              whileHover={{ 
-                x: 10, 
-                scale: 1.05,
-                color: "#3b82f6"
-              }}
-              className="cursor-pointer transition-all duration-300 flex items-center gap-2"
-            >
-              <motion.div
-                className="w-2 h-2 bg-blue-500 rounded-full"
-                animate={{ 
-                  scale: [1, 1.5, 1],
-                  opacity: [0.5, 1, 0.5]
-                }}
-                transition={{ 
-                  duration: 2, 
-                  repeat: Infinity, 
-                  delay: i * 0.3 
-                }}
-              />
-              {skill}
-            </motion.li>
-          ))}
-        </motion.ul>
-
-        <motion.ul
-          className="list-disc pl-4 sm:pl-6 space-y-2"
-          variants={containerVariants}
-        >
-          {["NodeJS", "Tailwind", "MongoDB"].map((skill, i) => (
-            <motion.li
-              key={i}
-              variants={skillVariants}
-              whileHover={{ 
-                x: 10, 
-                scale: 1.05,
-                color: "#10b981"
-              }}
-              className="cursor-pointer transition-all duration-300 flex items-center gap-2"
-            >
-              <motion.div
-                className="w-2 h-2 bg-green-500 rounded-full"
-                animate={{ 
-                  scale: [1, 1.5, 1],
-                  opacity: [0.5, 1, 0.5]
-                }}
-                transition={{ 
-                  duration: 2, 
-                  repeat: Infinity, 
-                  delay: i * 0.3 + 0.5 
-                }}
-              />
-              {skill}
-            </motion.li>
-          ))}
-        </motion.ul>
+    <div className="h-full flex flex-col">
+      {/* Header */}
+      <div className="flex items-center gap-3 mb-6">
+        <div className="w-12 h-12 bg-gradient-to-br from-blue-400 to-purple-500 rounded-xl flex items-center justify-center">
+          <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+          </svg>
+        </div>
+        <h2 className="text-3xl font-bold text-gray-800">Technical Skills</h2>
       </div>
-
-      {/* Floating Tech Icons */}
+      
+      {/* Skills Grid - 3x4 layout */}
       <motion.div 
-        className="mt-8 flex gap-6"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1, duration: 0.8 }}
+        className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-3 md:gap-4 flex-1"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
       >
-        <motion.div
-          whileHover={{ scale: 1.1, rotate: [0, -5, 5, 0] }}
-          transition={{ duration: 0.3 }}
-          className="relative group"
-        >
+        {skills.map((skill, i) => (
           <motion.div
-            className="absolute -inset-2 bg-blue-100 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-            animate={{ 
-              scale: [1, 1.2, 1],
-              opacity: [0, 0.3, 0]
+            key={skill.name}
+            variants={skillVariants}
+            whileHover={{ 
+              scale: 1.05,
+              rotate: [0, -2, 2, 0],
+              transition: { duration: 0.3 }
             }}
-            transition={{ duration: 3, repeat: Infinity }}
-          />
-          <NextjsSVG />
-        </motion.div>
-        
-        <motion.div
-          whileHover={{ scale: 1.1, rotate: [0, 5, -5, 0] }}
-          transition={{ duration: 0.3 }}
-          className="relative group"
-        >
-          <motion.div
-            className="absolute -inset-2 bg-cyan-100 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-            animate={{ 
-              scale: [1, 1.2, 1],
-              opacity: [0, 0.3, 0]
-            }}
-            transition={{ duration: 3, repeat: Infinity, delay: 1 }}
-          />
-          <ReactSVG />
-        </motion.div>
+            className="group cursor-pointer"
+          >
+            <div className={`p-3 md:p-4 bg-gradient-to-br ${skill.color} rounded-xl shadow-lg text-white text-center transform transition-all duration-300 group-hover:shadow-xl h-full flex flex-col justify-center items-center`}
+            >
+              <motion.div 
+                className="flex items-center justify-center mb-3"
+                animate={{ y: [0, -4, 0] }}
+                transition={{ duration: 2, repeat: Infinity, delay: i * 0.2 }}
+              >
+                <div className="w-6 h-6 md:w-8 md:h-8 flex items-center justify-center">
+                  <skill.icon />
+                </div>
+              </motion.div>
+              <p className="font-semibold text-xs md:text-sm leading-tight text-center">{skill.name}</p>
+            </div>
+          </motion.div>
+        ))}
       </motion.div>
-
-      {/* Floating decorative elements */}
-      <motion.div
-        className="absolute -top-4 -left-4 w-3 h-3 bg-yellow-400 rounded-full opacity-60"
-        animate={{ 
-          y: [0, -15, 0],
-          x: [0, 10, 0],
-          scale: [1, 1.3, 1]
-        }}
-        transition={{ duration: 4, repeat: Infinity }}
-      />
-      <motion.div
-        className="absolute -bottom-4 -right-4 w-2 h-2 bg-purple-400 rounded-full opacity-60"
-        animate={{ 
-          y: [0, 15, 0],
-          x: [0, -10, 0],
-          scale: [1, 0.7, 1]
-        }}
-        transition={{ duration: 5, repeat: Infinity, delay: 2 }}
-      />
-    </motion.div>
+    </div>
   );
 }
